@@ -13,7 +13,8 @@ import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 import { format } from "date-fns"
 import { getCarBrandLogo } from "@/lib/utils/car-logos"
-import MapComponent from "@/components/map-component"
+import dynamic from "next/dynamic"
+const MapComponent = dynamic(() => import("@/components/map-component"), { ssr: false })
 
 type FilterType =
   | "all"
